@@ -36,7 +36,8 @@ public class Employee {
     public Employee(String name, String surname, Type contract, Date contractStartDate, Double salary, Position position) {
         this.name = name;
         this.surname = surname;
-        this.contract = contract;
+        this.contract = contract;                       // •	Use enum where it‘s needed (enum constants must have display values and a method to create enum from display value).
+                                                        // specifiškai nenurodyta, kad turi spusdinti display value, bet gal būtų gražu :)
         this.contractStartDate = contractStartDate;
         this.salary = salary;
         this.position = position;
@@ -54,7 +55,8 @@ public class Employee {
                 '}';
     }
 
-    private Date contractStartDate;
+    private Date contractStartDate;                 // būtų gerai turėt kodo struktūros. visi class field vienoj vietoj,
+                                                    // konstruktoriai vienoj vietoj, etc.
     private Double salary;
     private Position position;
 
@@ -62,17 +64,18 @@ public class Employee {
         this.name = name;
         this.surname = surname;
         this.contract = contract;
-        this.contractStartDate = contractStartDate;
-        this.salary = salary;
-        this.position = position;
+        this.contractStartDate = contractStartDate; // kadangi nepaduodi variable per konstruktorių - gaunasi,
+                                                    // kad priskiri tą pačią reikšmę tam pačiam field. a = a
+        this.salary = salary;                       // čia tas pats
+        this.position = position;                   // čia tas pats
     }
     public Employee() {
-        this.name = name;
-        this.surname = surname;
-        this.contract = contract;
-        this.contractStartDate = contractStartDate;
-        this.salary = salary;
-        this.position = position;
+        this.name = name;                           // čia tas pats
+        this.surname = surname;                     // čia tas pats
+        this.contract = contract;                   // ....
+        this.contractStartDate = contractStartDate; // ....
+        this.salary = salary;                       // ....
+        this.position = position;                   // ....
     }
 
 }
