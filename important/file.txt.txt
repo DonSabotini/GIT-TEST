@@ -1,4 +1,4 @@
 Feature
-Conflict
+resolve
 No conflict
 
